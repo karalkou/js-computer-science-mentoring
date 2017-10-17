@@ -112,10 +112,10 @@ function isPrime(num, p = 2) {
     if (num < 2) {
         return false;
     } // Базовый случай
-    else if (num == 2) {
+    else if (num === 2) {
         return true;
     } // Базовый случай
-    else if (num % p == 0) {
+    else if (num % p === 0) {
         return false;
     } // Шаг рекурсии / рекурсивное условие
     else if (p < num/2) {

@@ -7,19 +7,43 @@ export default class Queue {
     this.length = 0;
   }
 
+  /**
+   * delete first element of queue
+   */
   shift() {
-    // delete first element of queue
+    while( this.head !== this.tail ){
+        prevHeadNext = this.head.next;
+        this.head = prevHeadNext;
+        this.head.next = null;
+        this.length--;
+    }
   }
 
+  /**
+   * add last element of queue
+   * @param value
+   */
   unshift(value) {
-    // add last element of queue
+    if ( !this.head ) {
+      this.head = this.tail;
+    }
+    let currentNode = this.tail;
+    this.tail = new Node(value);
+    this.tail.next = currentNode;
+    this.length++;
   }
 
+  /**
+   * returns size of queue
+   */
   size() {
-    // returns size of queue
+    return this.length;
   }
 
+  /**
+   * returns true if queue is empty, else returns false
+   */
   isEmpty() {
-    // returns true if queue is empty, else returns false
+    return !!this.length;
   }
 }

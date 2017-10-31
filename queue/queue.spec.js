@@ -1,5 +1,6 @@
 import Queue from './queue';
 import Node from './node';
+import testConfig from '../setup-mocha.js';
 
 describe('Queue', () => {
     describe('#constructor', () => {
@@ -14,7 +15,7 @@ describe('Queue', () => {
         it('should assign new node as _top of queue', () => {
             const value = 144;
 
-            const queue = new queue();
+            const queue = new Queue();
 
             queue.unshift(value);
 

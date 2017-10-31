@@ -1,5 +1,6 @@
 import Stack from './stack';
 import Node from './node';
+import testConfig from '../setup-mocha.js';
 
 describe('Stack', () => {
     describe('#constructor', () => {

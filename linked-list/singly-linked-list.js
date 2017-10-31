@@ -7,17 +7,42 @@ export default class SinglyLinkedList {
     }
 
     /* 1 assigns a node as the head of a list */
-    head() {}
+    head() {
+        if(this._head){
+            return this._head.data;
+        }
+    }
 
     /* 2 adds a node to a list */
-    append(data) {}
+    append(data) {
+        let node = new Node(value);
+        let currentNode = this.head;
+
+        if ( this.isEmpty() ) {
+            this._head = node;
+            this.length++;
+        } else {
+
+        }
+
+    }
 
     /* 3 searches for a node at n-position in our list */
-    searchNodeAt(index){}
+    searchNodeAt(index){
+        let node = this._head;
+
+        for(let i=0; i<index; i+=1) {
+            node = node.next;
+        }
+
+        return node;
+    }
 
     /* 4 removes a node from a list */
     removeNodeAt(index) {}
 
-    /* 5 returns true if list is empty */
-    isEmpty() {}
+    /* 5 Return true if list is empty */
+    isEmpty() {
+        return this.length === 0;
+    }
 }

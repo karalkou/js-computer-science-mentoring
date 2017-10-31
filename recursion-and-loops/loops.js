@@ -1,6 +1,16 @@
-// @param num {number}
-// @return {number}
+/**
+ * This cycle algorithm helps to count greatest common divisor (GCD)
+ * @param a {number}
+ * @param b {number}
+ * @return {number}
+ */
+function euclidianAlgorithmCycle(a, b) {}
+/*--------------------------------------------------------------------------------------------------------------------*/
 
-function fibbonaci(num) {
-  return ;
-}
+/**
+ * Loop realization
+ * @param num {number}
+ * @returns {number}
+ */
+function fibonacciCycle(num) {}
+/*--------------------------------------------------------------------------------------------------------------------*/

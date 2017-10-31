@@ -1,6 +1,6 @@
 import Node from './node';
 
-export default class SinglyLinkedList {
+export default class LinkedList {
     constructor() {
         this._head = null;
         this.length = 0;

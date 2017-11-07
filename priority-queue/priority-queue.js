@@ -38,45 +38,67 @@ import Node from './node';
 
 export default class PriorityQueue {
     constructor() {
-        // this.heap = new MaxHeap();
+        this.items = [];
     }
 
     /**
-     * peek aka max
-     * returns value of the most priority queue element
+     * peek aka min
+     * returns value of the less priority queue element
      */
     peek() {
-        return this.head ? this.head.value : null;
+        if (this.isEmpty()) throw new Error('Can not peek. The priority queue is empty');
+
+        return this.items[0];
     }
 
     /**
      * returns size of queue
      */
     size() {
-        return this.length;
+        return this.items.length;
     }
 
     /**
      * returns true if queue is empty, else returns false
      */
     isEmpty() {
-        return !this.length;
+        return !this.items.length;
     }
 
     /**
      * enqueue aka insert
-     * adds last element to the queue
+     * adds element to the queue
      * @param data
      * @param priority
      */
-    enqueue(data, priority) {}
+    enqueue(data, priority) {
+        let newNode = new Node(data, priority);
+        let contain = false;
+
+        for (let i = 0; i < this.items.length; i+=1) {
+            if (this.items[i].priority > newNode.priority) {
+                this.items.splice(i, 0, newNode);
+                contain = true;
+                break;
+            }
+
+            if (!contain) {
+                this.items.push(newNode);
+            }
+        }
+
+    }
 
     /**
-     * dequeue aka deleteMax
+     * dequeue aka deleteMin
      * deletes first element from the queue
      * returns removed node
      */
-    dequeue() {}
+    dequeue() {
+        if (this.isEmpty()) throw new Error('Can not dequeue. The priority queue is empty');
+
+        return this.items.shift();
+    }
 }
 
 /*

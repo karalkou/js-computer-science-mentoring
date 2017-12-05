@@ -107,7 +107,20 @@ export default class BinarySearchTree {
         return false;
     }
 
-    traverse() {}
+    traverse(fn) {
+        let current = this.root;
+        this.inOrder(current, fn);
+    }
+
+    inOrder(node, fn) {
+        if(node) {
+            this.inOrder(node.left, fn);
+            if(fn) {
+                fn(node);
+            }
+            this.inOrder(node.right, fn);
+        }
+    };
 
     verify() {}
 

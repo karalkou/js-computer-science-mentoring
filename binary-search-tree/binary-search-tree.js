@@ -123,7 +123,9 @@ export default class BinarySearchTree {
         }
     };
 
-    verify() {}
+    verify() {
+        /* check for balance */
+    }
 
     getMax(node){
         if(!node) {

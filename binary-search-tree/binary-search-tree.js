@@ -41,6 +41,7 @@ export default class BinarySearchTree {
 
     removeAt(data) {
         // delete node from bst
+        let that = this;
         let removeNode = function(node, data) {
             if(!node) {
                 return null;
@@ -115,9 +116,9 @@ export default class BinarySearchTree {
     inOrder(node, fn) {
         if(node) {
             this.inOrder(node.left, fn);
-            if(fn) {
-                fn(node);
-            }
+
+            if(fn) fn(node);
+
             this.inOrder(node.right, fn);
         }
     };
